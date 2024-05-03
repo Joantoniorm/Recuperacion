@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 ${comm.label} - ${comm.provinces.length}
                 </summary>`;
         
-        // Ordenar las provincias alfabéticamente por defecto
+      
         comm.provinces.sort((a, b) => a.label.localeCompare(b.label));
 
         for (const province of comm.provinces) {
@@ -22,12 +22,27 @@ document.addEventListener("DOMContentLoaded", async function () {
                         ${province.label} - ${province.towns.length}
                         </summary>`;
             
-            // Ordenar los pueblos alfabéticamente por defecto
+           
             province.towns.sort((a, b) => a.label.localeCompare(b.label));
 
-            for (const town of province.towns) {
+
+            //Aqui consigo hacer que vean solo los 3 primeros 
+            let townsToShow = province.towns.slice(0, 3);
+            let townsToHide = province.towns.slice(3);
+
+            for (const town of townsToShow) {
                 string += `<summary style= "color:green">${town.label}</summary>`;
             }
+
+            if (townsToHide.length > 0) {
+                string += `<button class="showMore">Ver más</button>`;
+                for (const town of townsToHide) {
+
+                    //los añados pero con display none. El resto esta en el evento que le doy al summary
+                    string += `<summary style= "color:green; display:none;">${town.label}</summary>`;
+                }
+            }
+
             string += `</details>`;
         }
         string += `</details>`;
@@ -36,7 +51,19 @@ document.addEventListener("DOMContentLoaded", async function () {
     let summary = document.querySelector("#comunities");
     summary.innerHTML = string;
 
-    // Función para ordenar las provincias por número de ciudades de forma ascendente
+    // Ver más
+    summary.addEventListener("click", function (event) {
+        if (event.target.classList.contains("showMore")) {
+            let summaryDetails = event.target.parentNode;
+            let allSummaries = summaryDetails.querySelectorAll("summary");
+
+            //Cambio el display a block de todos los hijos del parentnode
+            allSummaries.forEach(summary => summary.style.display = "block");
+            event.target.style.display = "none";
+        }
+    });
+
+    
     function sortByCityCountAsc() {
         comms.forEach(comm => {
             comm.provinces.sort((a, b) => a.towns.length - b.towns.length);
@@ -63,10 +90,10 @@ document.addEventListener("DOMContentLoaded", async function () {
             string += `</details>`;
         }
         
-        summary.innerHTML = sortedString;
+        summary.innerHTML = string;
     }
 
-    // Función para ordenar las provincias por número de ciudades de forma descendente
+
     function sortByCityCountDesc() {
         comms.forEach(comm => {
             comm.provinces.sort((a, b) => b.towns.length - a.towns.length);
