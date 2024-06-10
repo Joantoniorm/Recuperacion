@@ -1,0 +1,21 @@
+<div>
+  <h2>Actualizar Revisión</h2>
+  <form [formGroup]="revisionForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="fecha">Fecha:</label>
+      <input id="fecha" formControlName="fecha" type="date">
+    </div>
+
+    <div>
+      <label for="comentarios">Comentarios:</label>
+      <textarea id="comentarios" formControlName="comentarios"></textarea>
+    </div>
+
+    <div>
+      <label for="finalizada">Finalizada:</label>
+      <input id="finalizada" formControlName="finalizada" type="checkbox">
+    </div>
+
+    <button type="submit" [disabled]="revisionForm.invalid">Actualizar</button>
+  </form>
+</div>

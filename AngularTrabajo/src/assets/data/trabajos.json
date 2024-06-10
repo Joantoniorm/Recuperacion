@@ -1,0 +1,116 @@
+{
+  "trabajos": [
+    {
+      "id": 1,
+      "estado": "En progreso",
+      "alumnoId": 1,
+      "tutorId": 2,
+      "descripcion": "Trabajo de investigación sobre biodiversidad",
+      "completado": false,
+      "revisiones": [
+        {
+          "id": 1,
+          "fecha": "2023-05-01",
+          "comentarios": [
+            "Revisar introducción",
+            "Añadir referencias"
+          ],
+          "finalizada": true
+        },
+        {
+          "id": 2,
+          "fecha": "2023-06-01",
+          "comentarios": [
+            "Corregir citas",
+            "Añadir conclusiones"
+          ],
+          "finalizada": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "estado": "Completado",
+      "alumnoId": 2,
+      "tutorId": 1,
+      "descripcion": "Proyecto de ciencias sobre energías renovables",
+      "completado": true,
+      "revisiones": [
+        {
+          "id": 3,
+          "fecha": "2023-04-01",
+          "comentarios": [
+            "Presentación excelente",
+            "Buen uso de datos"
+          ],
+          "finalizada": true
+        },
+        {
+          "id": 4,
+          "fecha": "2023-05-15",
+          "comentarios": [
+            "Añadir bibliografía",
+            "Revisar formato"
+          ],
+          "finalizada": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "estado": "Pendiente",
+      "alumnoId": 3,
+      "tutorId": 1,
+      "descripcion": "Ensayo sobre la historia de la informática",
+      "completado": false,
+      "revisiones": [
+        {
+          "id": 5,
+          "fecha": "2023-07-01",
+          "comentarios": [
+            "Falta completar la sección de conclusión",
+            "Añadir más ejemplos"
+          ],
+          "finalizada": true
+        },
+        {
+          "id": 6,
+          "fecha": "2023-08-01",
+          "comentarios": [
+            "Revisar ortografía",
+            "Añadir figuras"
+          ],
+          "finalizada": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "estado": "En revisión",
+      "alumnoId": 4,
+      "tutorId": 1,
+      "descripcion": "Análisis literario de 'Cien años de soledad'",
+      "completado": false,
+      "revisiones": [
+        {
+          "id": 7,
+          "fecha": "2023-09-01",
+          "comentarios": [
+            "Revisar análisis de personajes",
+            "Corregir errores gramaticales"
+          ],
+          "finalizada": true
+        },
+        {
+          "id": 8,
+          "fecha": "2023-10-01",
+          "comentarios": [
+            "Añadir citas",
+            "Mejorar conclusión"
+          ],
+          "finalizada": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+<div>
+  <h2>Crear Revisión</h2>
+  <form [formGroup]="revisionForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="fecha">Fecha:</label>
+      <input id="fecha" formControlName="fecha" type="date">
+      <div *ngIf="revisionForm.get('fecha')?.hasError('fechaAnterior')" class="error-message">
+        La fecha seleccionada no puede ser anterior a la fecha actual.
+      </div>
+    </div>
+
+    <div>
+      <label for="comentarios">Comentarios:</label>
+      <textarea id="comentarios" formControlName="comentarios"></textarea>
+    </div>
+
+    <div>
+      <label for="finalizada">Finalizada:</label>
+      <input id="finalizada" formControlName="finalizada" type="checkbox">
+    </div>
+
+    <button type="submit" [disabled]="revisionForm.invalid">Crear</button>
+  </form>
+</div>

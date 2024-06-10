@@ -1,0 +1,10 @@
+<h2>Tutores</h2>
+<a routerLink="/tutores/create" class="button">Crear Tutor</a>
+<div>
+  <ul>
+    <li *ngFor="let tutor of this.tutorService.tutores">
+      {{ tutor.id }} - {{ tutor.nombre }} {{ tutor.apellido }}
+      <a routerLink="/tutores/details/{{tutor.id}}" class="button">Detalles del Tutor</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+<h2>Alumnos</h2>
+
+
+
+<div class="grid-container">
+  <ng-container *ngFor="let alumno of this.alumnoService.alumnos">
+    <div class="bloquealumnos">
+      <p>{{ alumno.id }} - {{ alumno.nombre }} {{ alumno.apellido }} (Tutor ID: {{ alumno.tutorId }})</p>
+      <a routerLink="/alumnos/details/{{alumno.id}}" class="button">Detalles del Alumno</a>
+    </div>
+  </ng-container>
+
+</div>
+  <a routerLink="/alumnos/create" id="crear" class="button">Crear Alumno</a>
+</div>

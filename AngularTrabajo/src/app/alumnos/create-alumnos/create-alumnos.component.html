@@ -1,0 +1,19 @@
+<h2>Crear Nuevo Alumno</h2>
+<form (ngSubmit)="crearAlumno()">
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" [(ngModel)]="nuevoAlumno.nombre" name="nombre" required>
+  </div>
+  <div>
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" [(ngModel)]="nuevoAlumno.apellido" name="apellido" required>
+  </div>
+  <div>
+    <label>Tutor:</label>7
+    <div *ngFor="let tutor of tutores">
+      <input type="radio" [id]="'tutor-' + tutor.id" [(ngModel)]="nuevoAlumno.tutorId" [value]="+tutor.id" name="tutorId" required>
+      <label [for]="'tutor-' + tutor.id">{{ tutor.nombre }}</label>
+    </div>
+  </div>
+  <button type="submit">Crear Alumno</button>
+</form>

@@ -1,0 +1,30 @@
+<h2>Trabajos</h2>
+<a routerLink="/trabajos/create" class="button">Crear Trabajo</a>
+<div>
+  <ul>
+    <li>
+      <h3>{{ trabajo?.descripcion }}</h3>
+      <p>Estado: {{ trabajo?.estado }}</p>
+      <p>Tutor ID: {{ trabajo?.tutorId }}</p>
+      <p>Alumno ID: {{ trabajo?.alumnoId }}</p>
+      <p>Completado: {{ trabajo?.completado ? 'Sí' : 'No' }}</p>
+
+      <h4>Revisiones:</h4>
+      <ul>
+        <li *ngFor="let revision of trabajo?.revisiones">
+          <p>Fecha: {{ revision.fecha }}</p>
+          <p>Finalizada: {{ revision.finalizada ? 'Sí' : 'No' }}</p>
+          <p>Comentarios:</p>
+          <ul>
+            <li *ngFor="let comentario of revision.comentarios">
+              {{ comentario }}
+            </li>
+          </ul>
+          <p><strong><a [routerLink]="'/trabajos/'+trabajo?.id+'/update/'+revision.id">UPDATE de Revision</a></strong></p>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p><strong><a [routerLink]="'/trabajos/'+trabajo?.id+'/create/revision'">Crear Revision</a></strong></p>
+  <p><strong><a [routerLink]="'/trabajos/update/'+trabajo?.id">Actualizar</a></strong></p>
+</div>

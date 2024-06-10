@@ -1,0 +1,10 @@
+<div>
+  <h2>Detalles del alumno</h2>
+  <p><strong>Nombre:</strong> {{ alumno?.nombre }}</p>
+  <p><strong>Apellido:</strong> {{ alumno?.apellido }}</p>
+  <p><strong>Tutor:</strong> {{ tutor?.nombre}}</p>
+  <p><strong>Trabajo:</strong> {{trabajo?.descripcion}}</p>
+  <p><strong><a [routerLink]="'/trabajos/details/'+trabajo?.id">Detalles sobre el trabajo</a></strong></p>
+  <button (click)="deleteAlumno(alumno?.id)">Eliminar Alumno</button>
+</div>
+

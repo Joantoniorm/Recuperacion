@@ -1,0 +1,30 @@
+<h2>Crear Nuevo Trabajo</h2>
+<form (ngSubmit)="crearTrabajo()">
+  <div>
+    <label for="estado">Estado:</label>
+    <input type="text" id="estado" [(ngModel)]="nuevoTrabajo.estado" name="estado" required>
+  </div>
+  <div>
+    <label>Alumno:</label>
+    <div *ngFor="let alumno of alumnos">
+      <input type="radio" [id]="'alumno-' + alumno.id" [(ngModel)]="nuevoTrabajo.alumnoId" [value]="+alumno.id" name="alumnoId" required>
+      <label [for]="'alumno-' + alumno.id">{{ alumno.id }}</label>
+    </div>
+  </div>
+  <div>
+    <label>Tutor:</label>
+    <div *ngFor="let tutor of tutores">
+      <input type="radio" [id]="'tutor-' + tutor.id" [(ngModel)]="nuevoTrabajo.tutorId" [value]="+tutor.id" name="tutorId" required>
+      <label [for]="'tutor-' + tutor.id">{{ tutor.id }}</label>
+    </div>
+  </div>
+  <div>
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" [(ngModel)]="nuevoTrabajo.descripcion" name="descripcion" required></textarea>
+  </div>
+  <div>
+    <label>Completado:</label>
+    <input type="checkbox" id="completado" [(ngModel)]="nuevoTrabajo.completado" name="completado">
+  </div>
+  <button type="submit">Crear Trabajo</button>
+</form>

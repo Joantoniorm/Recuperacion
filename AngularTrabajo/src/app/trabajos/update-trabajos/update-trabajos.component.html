@@ -1,0 +1,25 @@
+<div>
+  <h2>Actualizar Trabajo</h2>
+  <form [formGroup]="trabajoForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="estado">Estado:</label>
+      <input id="estado" formControlName="estado">
+    </div>
+    <div>
+      <label for="tutorId">ID del Tutor:</label>
+      <input id="tutorId" formControlName="tutorId" type="number">
+    </div>
+
+    <div>
+      <label for="descripcion">Descripción:</label>
+      <textarea id="descripcion" formControlName="descripcion"></textarea>
+    </div>
+
+    <div>
+      <label for="completado">Completado:</label>
+      <input id="completado" formControlName="completado" type="checkbox">
+    </div>
+
+    <button type="submit" [disabled]="trabajoForm.invalid">Actualizar</button>
+  </form>
+</div>

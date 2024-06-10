@@ -1,0 +1,46 @@
+{
+  "alumnos": [
+    {
+      "id": 1,
+      "nombre": "Juan",
+      "apellido": "Pérez",
+      "tutorId": 1
+    },
+    {
+      "id": 2,
+      "nombre": "María",
+      "apellido": "García",
+      "tutorId": 2
+    },
+    {
+      "id": 3,
+      "nombre": "Carlos",
+      "apellido": "Sánchez",
+      "tutorId": 3
+    },
+    {
+      "id": 4,
+      "nombre": "Ana",
+      "apellido": "López",
+      "tutorId": 1
+    },
+    {
+      "id": 5,
+      "nombre": "Pedro",
+      "apellido": "Martínez",
+      "tutorId": 2
+    },
+    {
+      "id": 6,
+      "nombre": "Laura",
+      "apellido": "Rodríguez",
+      "tutorId": 3
+    },
+    {
+      "id": 7,
+      "nombre": "David",
+      "apellido": "Gómez",
+      "tutorId": 1
+    }
+  ]
+}
