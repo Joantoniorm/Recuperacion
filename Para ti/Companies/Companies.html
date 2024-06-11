@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Companies.css" type="text/css">
+</head>
+<body>
+    <div id="container">
+        <!---Menu de opciones-->
+        <div id="menu">
+            <select id="continents">
+                <option value="0" selected>Todos</option>
+            </select>
+            <input type="button" value="select" id="continentSelector">
+            <div>Countries(<span id="numberCountries"></span>)</div>
+            <div>Companies(<span id="numberCompanies"></span>)</div>
+            <div>Company names(<span id="companyNames"></span>)</div>
+        </div>
+        <!--Tabla de contenidos-->
+        <div>
+            <table>
+                <tr>
+                    <td>Countries</td>
+                    <td>Num</td>
+                    <td>Companies</td>
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+    
+    
+    <script src="companies.js"></script>
+</body>
+</html>

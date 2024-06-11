@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Cookies</title>
+    <script>
+        // Función para guardar una cookie
+        function setCookie(nombre, valor, dias) {
+            let fecha = new Date();
+            fecha.setTime(fecha.getTime() + (dias * 24 * 60 * 60 * 1000));
+            let expira = "expires=" + fecha.toUTCString();
+            document.cookie = nombre + "=" + valor + ";" + expira + ";path=/";
+        }
+
+        // Función para obtener una cookie
+        function getCookie(nombre) {
+            let nombreEQ = nombre + "=";
+            let cookies = document.cookie.split(';');
+            for(let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i].trim();
+                if (cookie.indexOf(nombreEQ) == 0) {
+                    return cookie.substring(nombreEQ.length, cookie.length);
+                }
+            }
+            return null;
+        }
+
+        // Función para eliminar una cookie
+        function deleteCookie(nombre) {
+            document.cookie = nombre + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+
+        // Función para guardar datos
+        function guardarDatos() {
+            setCookie('nombre', 'Juan', 7);
+            let usuario = {
+                nombre: 'Ana',
+                edad: 30
+            };
+            setCookie('usuario', JSON.stringify(usuario), 7);
+            alert('Datos guardados');
+        }
+
+        // Función para obtener datos
+        function obtenerDatos() {
+            let nombre = getCookie('nombre');
+            let usuarioGuardado = getCookie('usuario');
+            let usuario = JSON.parse(usuarioGuardado);
+            alert('Nombre: ' + nombre + '\nUsuario: ' + JSON.stringify(usuario));
+        }
+
+        // Función para eliminar datos
+        function eliminarDatos() {
+            deleteCookie('nombre');
+            deleteCookie('usuario');
+            alert('Datos eliminados');
+        }
+    </script>
+</head>
+<body>
+    <button onclick="guardarDatos()">Guardar Datos</button>
+    <button onclick="obtenerDatos()">Obtener Datos</button>
+    <button onclick="eliminarDatos()">Eliminar Datos</button>
+</body>
+</html>

@@ -1,0 +1,25 @@
+.caja{
+    width: 400px;
+    height: 200px;
+    background-color: blue;
+    border: solid black 2px;
+}
+.container{
+    display: inline-block;
+    width: 900px;
+    overflow: hidden;
+}
+.elemento1{
+    background-color: brown;
+    height: 50px;
+    width: 390px;
+}
+.elemento2{
+    background-color: aquamarine;
+    height: 50px;
+    width: 390px;
+}
+body{
+    padding: 0;
+    margin: 0;
+}

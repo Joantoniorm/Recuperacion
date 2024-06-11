@@ -1,0 +1,51 @@
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#TMembers{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    
+}
+#TMembers div{
+   margin: 10%;
+}
+.ToDo div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.InProgress div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Done div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Progress{
+    display: flex;
+    flex-direction: row;
+    padding: 10%;
+    
+}
+.Progress div{
+    width: 200px;
+    border: 1px solid black;
+    background-color: rebeccapurple;
+}
+.Progress div div{
+    border: 1px solid black;
+    display: flex;
+    background-color: aqua;
+    justify-content: center;
+}
+
+.FechaCumplida{
+    color: red;
+}

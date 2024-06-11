@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <form action="" class="formulario">
+                <input type="text" name="Newtask" id="NTask">
+                <input type="text" name="Descripcion" id="Desc">
+                <input type="date" name="Fecha" id="Date" value="yyyy-mm-dd">
+                <button type="submit">Add task</button>
+            </form>
+        </div>
+        <div id="TMembers" class="Tmiembros"></div>
+        <div class="Progress">
+            <div class="ToDo" data-State="ToDo" id="ToDo">
+                <h1>To Do</h1>
+            </div>
+            <div class="InProgress" data-State="InProgress" id="InProgress">
+                <h1>In Progress</h1>
+            </div>
+            <div class="Done" id="Done">
+                <h1>Done</h1>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="Script.js"></script>
+</body>
+</html>

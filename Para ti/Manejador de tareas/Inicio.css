@@ -1,0 +1,29 @@
+
+#teamMembersContainer{
+    border: solid 3px black;
+}
+#addTaskContainer{
+    border: solid 3px black;
+    padding: 5px;
+
+}
+#addTaskContainer > *{
+    padding: 0px; 
+    margin: 0px;
+}
+#taskShowContainer{
+    padding: 5px;
+    border: solid 3px black;
+}
+
+#taskShowContainer div div{
+    border: solid 2px black;
+    padding: 5px;
+} 
+#taskShowContainer div div div{
+    border: solid 1px black;
+    
+}
+.taskShow{
+    min-height: 100px;
+}

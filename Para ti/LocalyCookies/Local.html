@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de localStorage</title>
+    <script>
+        // Función para guardar datos
+        function guardarDatos() {
+            localStorage.setItem('nombre', 'Juan');
+            let usuario = {
+                nombre: 'Ana',
+                edad: 30
+            };
+            localStorage.setItem('usuario', JSON.stringify(usuario));
+            alert('Datos guardados');
+        }
+
+        // Función para obtener datos
+        function obtenerDatos() {
+            let nombre = localStorage.getItem('nombre');
+            let usuarioGuardado = localStorage.getItem('usuario');
+            let usuario = JSON.parse(usuarioGuardado);
+            alert('Nombre: ' + nombre + '\nUsuario: ' + JSON.stringify(usuario));
+        }
+
+        // Función para eliminar datos
+        function eliminarDatos() {
+            localStorage.removeItem('nombre');
+            localStorage.removeItem('usuario');
+            alert('Datos eliminados');
+        }
+    </script>
+</head>
+<body>
+    <button onclick="guardarDatos()">Guardar Datos</button>
+    <button onclick="obtenerDatos()">Obtener Datos</button>
+    <button onclick="eliminarDatos()">Eliminar Datos</button>
+</body>
+</html>

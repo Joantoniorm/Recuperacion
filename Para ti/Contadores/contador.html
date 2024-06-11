@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contadores</title>
+    <style>
+        .counter {
+            margin: 20px;
+            font-size: 20px;
+        }
+        .counter button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="counter">
+        <h2>Contador hacia adelante</h2>
+        <div id="forwardCounter">0 segundos</div>
+        <button id="forwardButton">Pausar</button>
+    </div>
+    <div class="counter">
+        <h2>Contador hacia atrás desde 30 segundos</h2>
+        <div id="backwardCounter30">30 segundos</div>
+        <button id="backwardButton30">Pausar</button>
+    </div>
+    <div class="counter">
+        <h2>Contador hacia atrás desde 60 segundos</h2>
+        <div id="backwardCounter60">60 segundos</div>
+        <button id="backwardButton60">Pausar</button>
+    </div>
+    <div class="counter">
+        <h2>Contador hacia atrás desde 120 segundos</h2>
+        <div id="backwardCounter120">120 segundos</div>
+        <button id="backwardButton120">Pausar</button>
+    </div>
+
+    <script>
+        // Contador hacia adelante desde la fecha actual
+        let forwardSeconds = 0;
+        let forwardInterval;
+        let forwardRunning = true;
+
+        function startForwardCounter() {
+            forwardInterval = setInterval(() => {
+                forwardSeconds++;
+                document.getElementById('forwardCounter').textContent = `${forwardSeconds} segundos`;
+            }, 1000);
+        }
+
+        startForwardCounter();
+
+        document.getElementById('forwardButton').addEventListener('click', () => {
+            if (forwardRunning) {
+                clearInterval(forwardInterval);
+                document.getElementById('forwardButton').textContent = 'Reanudar';
+            } else {
+                startForwardCounter();
+                document.getElementById('forwardButton').textContent = 'Pausar';
+            }
+            forwardRunning = !forwardRunning;
+        });
+
+        // Contadores hacia atrás
+        function createBackwardCounter(id, startSeconds, buttonId) {
+            let remainingSeconds = startSeconds;
+            let intervalId;
+            let running = true;
+
+            function startCounter() {
+                intervalId = setInterval(() => {
+                    remainingSeconds--;
+                    document.getElementById(id).textContent = `${remainingSeconds} segundos`;
+                    if (remainingSeconds <= 0) {
+                        clearInterval(intervalId);
+                        document.getElementById(id).textContent = `Tiempo agotado`;
+                    }
+                }, 1000);
+            }
+
+            startCounter();
+
+            document.getElementById(buttonId).addEventListener('click', () => {
+                if (running) {
+                    clearInterval(intervalId);
+                    document.getElementById(buttonId).textContent = 'Reanudar';
+                } else {
+                    startCounter();
+                    document.getElementById(buttonId).textContent = 'Pausar';
+                }
+                running = !running;
+            });
+        }
+
+        createBackwardCounter('backwardCounter30', 30, 'backwardButton30');
+        createBackwardCounter('backwardCounter60', 60, 'backwardButton60');
+        createBackwardCounter('backwardCounter120', 120, 'backwardButton120');
+    </script>
+</body>
+</html>

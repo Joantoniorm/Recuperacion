@@ -1,0 +1,9 @@
+/* div input[type="radio"]{
+    display: block;
+}
+div input[type="checkbox"]{
+    display: block;
+} */
+div{
+    margin-bottom: 2em;
+}

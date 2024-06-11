@@ -1,0 +1,39 @@
+#container{
+    width: 80%;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+
+}
+#menu{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+body{
+    height: max-content;
+    width: auto;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+table tr{
+    display: flex;
+    justify-content: space-between;
+}
+table td{
+    border: solid black 1px;
+    width: 100%;
+}
+
+table{
+    width: 75%;
+}
+table tr:first-child td{
+    padding: 1%;
+}
+#continentSelector{
+    padding: 0.2em;
+}

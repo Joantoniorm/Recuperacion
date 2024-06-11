@@ -1,0 +1,11 @@
+Proyecto examen
+
+- un unico array para todas las tareas
+- los team members van a ser arrrays en local
+- la dueDate es optativa
+- no tocar dom, simplemente repintar todo, actualizar los datos en el array.
+
+
+Progreso
+
+faltan los checks de in progress que pasan los elementos a done
